@@ -1,0 +1,11 @@
+# Frontend (Vite) lives in client/. Netlify must publish the build output (dist/),
+# not the source tree — otherwise the browser loads /src/main.jsx and fails MIME checks.
+[build]
+  base = "client"
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
